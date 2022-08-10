@@ -14,16 +14,22 @@ public class TicketResource {
     private String name;
     private String priority;
     private String description;
-    private String category;
+    private String type;
+    private String assignedDeveloper;
+    private String status;
+    private String assignedProject;
 
     public TicketResource(){
     }
 
-    public TicketResource(String name, String priority, String description, String category) {
+    public TicketResource(String name, String priority, String description, String type, String assignedDeveloper, String status, String assignedProject) {
         this.name = name;
         this.priority = priority;
         this.description = description;
-        this.category = category;
+        this.type = type;
+        this.assignedDeveloper = assignedDeveloper;
+        this.status = status;
+        this.assignedProject = assignedProject;
     }
 
     public Long getId() {
@@ -42,8 +48,20 @@ public class TicketResource {
         return description;
     }
 
-    public String getCategory() {
-        return category;
+    public String getType() {
+        return type;
+    }
+
+    public String getAssignedDeveloper() {
+        return assignedDeveloper;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getAssignedProject() {
+        return assignedProject;
     }
 
 
