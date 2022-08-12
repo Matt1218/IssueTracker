@@ -19,7 +19,7 @@ public class TicketService {
         System.out.println(ticketResource.toString());
         return ticketRepository.save(ticketResource);
     }
-    
+
 
     //GET
     public Collection<TicketResource> getAllTickets(){
