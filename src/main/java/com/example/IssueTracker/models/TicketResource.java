@@ -64,5 +64,33 @@ public class TicketResource {
         return assignedProject;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setAssignedDeveloper(String assignedDeveloper) {
+        this.assignedDeveloper = assignedDeveloper;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void setAssignedProject(String assignedProject) {
+        this.assignedProject = assignedProject;
+    }
+
 
 }
