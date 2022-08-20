@@ -33,6 +33,11 @@ public class TicketController {
         return ticketService.getTicketByName(name);
     }
 
+    @GetMapping("/api/tickets/{id}")
+    public TicketResource findTicketById(@PathVariable Long id){
+        return ticketService.getTicketById(id);
+    }
+
 
     //POST
     @PostMapping("/api/addTicket")
@@ -41,6 +46,11 @@ public class TicketController {
         return ticketService.saveTicket(ticketResource);
     }
 
+    //DELETE
+    @DeleteMapping("/api/{id}/deleteTicket")
+    public void deleteTicket(@PathVariable Long id) {
+        ticketService.deleteById(id);
+    }
     
 
 
