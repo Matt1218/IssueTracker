@@ -51,9 +51,14 @@ public class TicketController {
     public void deleteTicket(@PathVariable Long id) {
         ticketService.deleteById(id);
     }
+
+    //PUT
+    @PutMapping("/api/updateTicket")
+    public void updateTicket(@RequestBody TicketResource ticketResource){
+        ticketService.updateTicket(ticketResource);
+    }
+
     
-
-
 }
 
 

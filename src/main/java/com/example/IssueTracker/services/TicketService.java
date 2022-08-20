@@ -62,4 +62,17 @@ public class TicketService {
     public void deleteById(Long id) {
         ticketRepository.deleteById(id);
     }
+
+    //PUT
+    public TicketResource updateTicket(TicketResource ticketResource){
+        TicketResource existingTicket = ticketRepository.findById(ticketResource.getId()).orElse(null);
+        existingTicket.setName(ticketResource.getName());
+        existingTicket.setPriority(ticketResource.getPriority());
+        existingTicket.setDescription(ticketResource.getDescription());
+        existingTicket.setType(ticketResource.getType());
+        existingTicket.setAssignedDeveloper(ticketResource.getAssignedDeveloper());
+        existingTicket.setStatus(ticketResource.getStatus());
+        existingTicket.setAssignedProject(ticketResource.getAssignedProject());
+        return ticketRepository.save(existingTicket);
+    }
 }
