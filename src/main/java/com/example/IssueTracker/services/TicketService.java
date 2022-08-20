@@ -57,4 +57,9 @@ public class TicketService {
     public TicketResource getTicketByAssignedProject(String assignedProject){
         return ticketRepository.findByAssignedProject(assignedProject);
     }
+
+    //Delete
+    public void deleteById(Long id) {
+        ticketRepository.deleteById(id);
+    }
 }
