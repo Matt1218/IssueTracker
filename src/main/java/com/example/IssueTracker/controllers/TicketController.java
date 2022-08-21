@@ -23,37 +23,37 @@ public class TicketController {
     private final Logger logger = LoggerFactory.getLogger(TicketController.class);
 
     //GET
-    @GetMapping("/api/tickets")
+    @GetMapping("/tickets")
     public Collection<TicketResource> getAllTickets(){
         return ticketService.getAllTickets();
     }
 
-    @GetMapping("/api/ticketByName/{name}")
+    @GetMapping("/ticketByName/{name}")
     public TicketResource findTicketByName(@PathVariable String name){
         return ticketService.getTicketByName(name);
     }
 
-    @GetMapping("/api/tickets/{id}")
+    @GetMapping("/tickets/{id}")
     public TicketResource findTicketById(@PathVariable Long id){
         return ticketService.getTicketById(id);
     }
 
 
     //POST
-    @PostMapping("/api/addTicket")
+    @PostMapping("/addTicket")
     public TicketResource addTicket(@RequestBody TicketResource ticketResource) {
         logger.info("Ticket object {}", ticketResource.toString());
         return ticketService.saveTicket(ticketResource);
     }
 
     //DELETE
-    @DeleteMapping("/api/{id}/deleteTicket")
+    @DeleteMapping("/{id}/deleteTicket")
     public void deleteTicket(@PathVariable Long id) {
         ticketService.deleteById(id);
     }
 
     //PUT
-    @PutMapping("/api/updateTicket")
+    @PutMapping("/updateTicket")
     public void updateTicket(@RequestBody TicketResource ticketResource){
         ticketService.updateTicket(ticketResource);
     }

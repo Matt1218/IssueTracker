@@ -1,7 +1,9 @@
 package com.example.IssueTracker;
 
 import com.example.IssueTracker.models.TicketResource;
+import com.example.IssueTracker.models.UserResource;
 import com.example.IssueTracker.repos.TicketRepository;
+import com.example.IssueTracker.repos.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +15,9 @@ public class Populator implements CommandLineRunner {
     @Resource
     private TicketRepository ticketRepo;
 
+    @Resource
+    private UserRepository userRepo;
+
     @Override
     public void run(String... args) throws Exception {
 
@@ -22,6 +27,10 @@ public class Populator implements CommandLineRunner {
 
         ticketRepo.save(ticket1);
         ticketRepo.save(ticket2);
+
+        UserResource user1 = new UserResource("admin", "password");
+
+        userRepo.save(user1);
 
     }
 }
